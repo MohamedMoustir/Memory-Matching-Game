@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Memory Matching Game</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    .card {
+      perspective: 1000px;
+      transition: transform 0.5s;
+    }
+
+    .card-inner {
+      transition: transform 0.5s;
+      transform-style: preserve-3d;
+    }
+
+    .card-front,
+    .card-back {
+      backface-visibility: hidden;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* .card-back {
+      transform: rotateY(180deg);
+    } */
+
+    .flipped .card-inner {
+      transform: rotateY(180deg);
+    }
+  </style>
+</head>
+
+<body class="bg-blue-500 min-h-screen flex flex-col items-center justify-center p-4">
+  <h1 class="text-white text-3xl font-bold mb-6">Nombre de tentatives : <span id="attempts">0</span></h1>
+
+  <div id="continer" class="  grid grid-cols-9 gap-2 max-w-4xl">
+  
+  </div>
+
+  <button id="resetButton"
+    class="mt-8 bg-white text-blue-500 font-bold py-2 px-4 rounded hover:bg-blue-100 transition">Restart Game</button>
+  <script src="main.js"></script>
+</body>
+
+</html>
